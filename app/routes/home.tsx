@@ -1,7 +1,6 @@
 import type { Route } from "./+types/home";
-// import { Welcome } from "../welcome/welcome";
 import Navbar from '~/components/Navbar';
-import {Link, useLocation, useNavigate} from "react-router";
+import {Link, useLocation, useNavigate} from "react-router-dom";
 import { resumes } from "../../constants";
 import ResumeCard from '~/components/ResumeCard';
 import {usePuterStore} from "~/lib/puter";
@@ -24,15 +23,7 @@ export default function Home() {
 
     }, [auth.isAuthenticated]);
     return <main className="bg-[url('/images/bg-main.svg')] bg-cover">
-      <nav className="navbar">
-          <Link to="/">
-              <p className="text-2xl font-bold text-gradient">Resumy</p>
-          </Link>
-          <Link to="/upload" className="primary-button w-fit">
-              Upload Resume
-          </Link>
-      </nav>
-
+         <Navbar />
       <section className="main-section">
           <div className="page-heading py-16">
               <h1> Track Your Applications & Resume Ratings </h1>
